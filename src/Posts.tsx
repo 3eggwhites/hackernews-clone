@@ -1,6 +1,6 @@
 import React from "react";
-import moment from "moment";
 import { fetchMainPosts } from "./api/api";
+import MetaInfo from "./MetaInfo";
 
 interface MainPost {
   by: string;
@@ -12,24 +12,6 @@ interface MainPost {
   type: string;
   url: string;
 }
-
-interface Metadata {
-  by: string;
-  descendants: number;
-  time: number;
-}
-
-const MetaInfo: React.FC<{ metadata: Metadata }> = ({ metadata }) => {
-  return (
-    <div className="meta-info">
-      <span>
-        by {metadata.by} on
-        {" " + moment.unix(metadata.time).format("DD/MM/YYYY, hh:mm A")}
-        {metadata.descendants && " with " + metadata.descendants + " comments"}
-      </span>
-    </div>
-  );
-};
 
 export default class Posts extends React.Component {
   state = {
@@ -48,12 +30,12 @@ export default class Posts extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <ul>
           {this.state.posts.map((post: MainPost, index) => {
             return (
               <li key={index}>
-                <div className="bg-light post-summary">
+                <div className="post-summary">
                   <a className="link" href={post.url}>
                     {post.title}
                   </a>
@@ -69,7 +51,7 @@ export default class Posts extends React.Component {
             );
           })}
         </ul>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -12,18 +12,9 @@ code {
     monospace;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px;
-}
-
 ul {
   list-style-type: none;
-}
-
-.post-summary {
-  margin: 20px 0;
+  padding: 0;
 }
 
 a.link {
@@ -32,7 +23,35 @@ a.link {
   font-weight: bold;
 }
 
+.nav li {
+  margin-right: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.bg-light {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
 .meta-info {
   padding: 5px 0 2px 0;
   color: gray;
+}
+
+.post-summary {
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
 }

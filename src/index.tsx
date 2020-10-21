@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 import Posts from "./Posts";
-import * as serviceWorker from "./serviceWorker";
+import Nav from "./Nav";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="container">
-      <Posts />
+    <div className="light">
+      <div className="container">
+        <Nav />
+      </div>
     </div>
   </React.StrictMode>,
   document.getElementById("root")
